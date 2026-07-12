@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KRR Cashew Impex — Premium Cashew Export &amp; Wholesale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --shell-brown:#3D2B1F;
+    --shell-brown-light:#5A4230;
+    --cream:#F3E6D0;
+    --cream-soft:#FBF5EA;
+    --leaf:#5B7A4A;
+    --leaf-dark:#42592F;
+    --gold:#C08A3E;
+    --charcoal:#2A2119;
+    --white:#FDFBF7;
+    --rule:#D9C6A3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream-soft);
+    color:var(--charcoal);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--shell-brown);
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* NAV */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream-soft);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    color:var(--shell-brown);
+  }
+  .logo span{color:var(--leaf);}
+  nav.links{display:flex; gap:32px; font-size:0.92rem; font-weight:500;}
+  nav.links a{text-decoration:none; color:var(--charcoal); position:relative; padding-bottom:4px;}
+  nav.links a:hover{color:var(--leaf-dark);}
+  .nav-cta{
+    background:var(--leaf); color:var(--white); text-decoration:none;
+    padding:10px 20px; border-radius:2px; font-size:0.88rem; font-weight:600;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--leaf-dark);}
+  .menu-toggle{display:none;}
+  @media (max-width:800px){
+    nav.links{display:none;}
+    .menu-toggle{display:block; font-size:1.5rem; background:none; border:none; color:var(--shell-brown); cursor:pointer;}
+  }
+
+  /* HERO */
+  .hero{
+    background:var(--shell-brown);
+    color:var(--cream);
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 88px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; right:-120px; top:-120px;
+    width:480px; height:480px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--shell-brown-light), transparent 70%);
+    opacity:0.6;
+  }
+  .hero-inner{position:relative; display:grid; grid-template-columns:1.3fr 1fr; gap:56px; align-items:center;}
+  @media (max-width:900px){ .hero-inner{grid-template-columns:1fr;} }
+  .eyebrow{
+    text-transform:uppercase; letter-spacing:0.14em; font-size:0.76rem;
+    color:var(--gold); font-weight:600; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem, 4.2vw, 3.4rem);
+    color:var(--white);
+    line-height:1.08;
+    margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:1.08rem; color:var(--cream); opacity:0.88; max-width:44ch; margin-bottom:32px;
+  }
+  .btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold); color:var(--shell-brown); text-decoration:none;
+    padding:14px 26px; font-weight:600; font-size:0.95rem; border-radius:2px;
+  }
+  .btn-primary:hover{background:#d59a4d;}
+  .btn-ghost{
+    border:1px solid var(--cream); color:var(--cream); text-decoration:none;
+    padding:14px 26px; font-weight:500; font-size:0.95rem; border-radius:2px;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+
+  /* hero kernel graphic */
+  .kernel-art{position:relative; height:280px;}
+  .kernel-shape{
+    position:absolute; border-radius:50% 50% 50% 8%;
+    background:linear-gradient(135deg, var(--gold), #E8C98A);
+  }
+  .kernel-shape.k1{width:170px; height:130px; top:20px; left:40px; transform:rotate(-18deg);}
+  .kernel-shape.k2{width:110px; height:84px; top:150px; left:150px; transform:rotate(12deg); background:linear-gradient(135deg,#EFE0C8,var(--gold));}
+  .kernel-shape.k3{width:70px; height:54px; top:10px; left:210px; transform:rotate(30deg); background:linear-gradient(135deg,var(--leaf),#7FA366);}
+  @media (max-width:900px){ .kernel-art{height:160px;} }
+
+  /* SECTION generic */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head .eyebrow{color:var(--leaf-dark);}
+  .section-head h2{font-size:clamp(1.7rem, 3vw, 2.3rem);}
+  .section-head p{color:#5c5147; margin-top:14px; font-size:1.02rem;}
+
+  /* ABOUT */
+  .about{background:var(--white);}
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:start;}
+  @media (max-width:800px){ .about-grid{grid-template-columns:1fr;} }
+  .about-text p{color:#4a4038; margin-bottom:16px; font-size:1.02rem;}
+  .stat-list{display:grid; grid-template-columns:1fr 1fr; gap:28px 24px;}
+  .stat{border-left:2px solid var(--gold); padding-left:16px;}
+  .stat .num{font-family:'Fraunces',serif; font-size:1.9rem; font-weight:600; color:var(--shell-brown); line-height:1;}
+  .stat .label{font-size:0.85rem; color:#6b6055; margin-top:6px;}
+
+  .img-slot{
+    border:2px dashed var(--rule);
+    border-radius:6px;
+    background:var(--cream-soft);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; color:#8a7d6d; gap:8px; padding:20px;
+    min-height:220px;
+  }
+  .img-slot svg{width:34px; height:34px; opacity:0.5;}
+  .img-slot .slot-title{font-weight:600; color:var(--shell-brown); font-size:0.9rem;}
+  .img-slot .slot-sub{font-size:0.78rem; max-width:22ch;}
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media (max-width:800px){ .gallery-grid{grid-template-columns:1fr;} }
+
+  /* GRADES - signature section */
+  .grades{background:var(--cream);}
+  .grade-note{font-size:0.92rem; color:#5c5147; max-width:640px; margin-top:-8px; margin-bottom:40px;}
+  .grade-chart{
+    display:flex; align-items:flex-end; gap:28px; padding:32px 0 8px;
+    border-bottom:1px solid var(--rule); overflow-x:auto;
+  }
+  .grade-item{display:flex; flex-direction:column; align-items:center; min-width:92px;}
+  .grade-circle{
+    border-radius:50%;
+    background:linear-gradient(160deg, var(--gold), #E8C98A);
+    box-shadow:inset -6px -6px 14px rgba(61,43,31,0.18);
+    margin-bottom:14px;
+  }
+  .grade-item .code{font-family:'Fraunces',serif; font-weight:600; color:var(--shell-brown); font-size:1.05rem;}
+  .grade-item .count{font-size:0.78rem; color:#6b6055; margin-top:3px; text-align:center;}
+  .grade-table{margin-top:44px; width:100%; border-collapse:collapse; font-size:0.94rem;}
+  .grade-table th{
+    text-align:left; padding:10px 14px; border-bottom:2px solid var(--shell-brown);
+    color:var(--shell-brown); font-weight:600; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em;
+  }
+  .grade-table td{padding:12px 14px; border-bottom:1px solid var(--rule); color:#4a4038;}
+  .grade-table tr:hover td{background:rgba(192,138,62,0.08);}
+
+  /* PROCESS */
+  .process{background:var(--white);}
+  .timeline{display:flex; flex-direction:column;}
+  .step{display:grid; grid-template-columns:64px 1fr; gap:24px; padding:28px 0; border-top:1px solid var(--rule);}
+  .step:last-child{border-bottom:1px solid var(--rule);}
+  .step .idx{font-family:'Fraunces',serif; font-size:1.1rem; color:var(--gold); font-weight:600;}
+  .step h3{font-size:1.15rem; margin-bottom:6px;}
+  .step p{color:#5c5147; font-size:0.98rem; max-width:60ch;}
+
+  /* TRUST */
+  .trust{background:var(--shell-brown); color:var(--cream);}
+  .trust .section-head h2{color:var(--white);}
+  .trust .section-head p{color:var(--cream); opacity:0.82;}
+  .trust-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  @media (max-width:800px){ .trust-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .trust-grid{grid-template-columns:1fr;} }
+  .trust-card{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(243,230,208,0.18);
+    padding:24px; border-radius:4px;
+  }
+  .trust-card h3{color:var(--gold); font-size:1.02rem; margin-bottom:8px;}
+  .trust-card p{font-size:0.92rem; color:var(--cream); opacity:0.85;}
+
+  /* CONTACT */
+  .contact{background:var(--cream);}
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px;}
+  @media (max-width:850px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-info h3{font-size:1.1rem; margin-bottom:10px;}
+  .contact-info p{color:#5c5147; margin-bottom:22px; font-size:0.98rem;}
+  .info-row{display:flex; gap:12px; margin-bottom:16px; font-size:0.94rem;}
+  .info-row .k{color:var(--shell-brown); font-weight:600; min-width:110px;}
+  .info-row .v{color:#4a4038;}
+
+  form{background:var(--white); padding:32px; border-radius:6px; border:1px solid var(--rule);}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  @media (max-width:500px){ .form-row{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1/-1;}
+  label{font-size:0.82rem; font-weight:600; color:var(--shell-brown);}
+  input, select, textarea{
+    font-family:'Work Sans', sans-serif; font-size:0.95rem;
+    padding:11px 12px; border:1px solid var(--rule); border-radius:3px;
+    background:var(--cream-soft); color:var(--charcoal);
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:2px solid var(--leaf); outline-offset:1px; border-color:var(--leaf);
+  }
+  textarea{resize:vertical; min-height:90px;}
+  .submit-btn{
+    background:var(--leaf); color:var(--white); border:none; cursor:pointer;
+    padding:14px 28px; font-weight:600; font-size:0.95rem; border-radius:3px; width:100%;
+  }
+  .submit-btn:hover{background:var(--leaf-dark);}
+  .form-note{font-size:0.8rem; color:#8a7d6d; margin-top:12px;}
+
+  footer{background:var(--shell-brown); color:var(--cream); padding:36px 0;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:0.85rem; opacity:0.75;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">KRR <span>CASHEW</span> IMPEX</div>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#grades">Grades</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Request a Quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Cashew Export &amp; Wholesale</div>
+      <h1>Whole kernels, honest grading, shipped to your port.</h1>
+      <p class="lead">KRR Cashew Impex sources, processes, and grades premium cashew kernels for exporters and bulk buyers — with every consignment traceable back to the coast it came from.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">Request a Bulk Quote</a>
+        <a href="#grades" class="btn-ghost">See Our Grades</a>
+      </div>
+    </div>
+    <div class="kernel-art" aria-hidden="true">
+      <div class="kernel-shape k1"></div>
+      <div class="kernel-shape k2"></div>
+      <div class="kernel-shape k3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <div class="section-head" style="margin-bottom:24px;">
+        <div class="eyebrow">About Us</div>
+        <h2>Built on the kernel, not just the shell.</h2>
+      </div>
+      <p>KRR Cashew Impex works directly with growers and processing units to bring consistently graded cashew kernels to international and domestic buyers. We handle sourcing, processing oversight, grading, and export documentation so buyers get a single, accountable point of contact.</p>
+      <p>Every batch is graded against recognised industry standards before it's packed — so the count on the bag matches the count in the container.</p>
+    </div>
+    <div class="stat-list">
+      <div class="stat"><div class="num">8+</div><div class="label">Kernel &amp; piece grades supplied</div></div>
+      <div class="stat"><div class="num">FOB / CIF</div><div class="label">Flexible export terms</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">Batches lab-tested before dispatch</div></div>
+      <div class="stat"><div class="num">B2B</div><div class="label">Bulk &amp; wholesale focus</div></div>
+      <div class="img-slot" style="grid-column:1/-1;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+        <div class="slot-title">Company / facility photo</div>
+        <div class="slot-sub">Add a photo of your team, warehouse, or processing unit here</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grades" id="grades">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Grading</div>
+      <h2>Graded by count, not guesswork.</h2>
+      <p>Cashew kernels are graded by how many whole kernels make up one pound — the lower the number, the larger the kernel. Here's how our core grades compare.</p>
+    </div>
+
+    <div class="grade-chart" role="img" aria-label="Relative kernel sizes by grade">
+      <div class="grade-item">
+        <div class="grade-circle" style="width:64px; height:64px;"></div>
+        <div class="code">W180</div>
+        <div class="count">~180/lb</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:56px; height:56px;"></div>
+        <div class="code">W210</div>
+        <div class="count">~210/lb</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:48px; height:48px;"></div>
+        <div class="code">W240</div>
+        <div class="count">~240/lb</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:38px; height:38px;"></div>
+        <div class="code">W320</div>
+        <div class="count">~320/lb</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:30px; height:30px;"></div>
+        <div class="code">W450</div>
+        <div class="count">~450/lb</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:44px; height:44px; background:linear-gradient(160deg,#E8C98A,#EFE0C8);"></div>
+        <div class="code">SW</div>
+        <div class="count">Scorched Wafer</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:34px; height:34px; background:linear-gradient(160deg,#E8C98A,#EFE0C8);"></div>
+        <div class="code">LWP</div>
+        <div class="count">Large White Pieces</div>
+      </div>
+      <div class="grade-item">
+        <div class="grade-circle" style="width:24px; height:24px; background:linear-gradient(160deg,#E8C98A,#EFE0C8);"></div>
+        <div class="code">SWP</div>
+        <div class="count">Small White Pieces</div>
+      </div>
+    </div>
+
+    <table class="grade-table">
+      <thead>
+        <tr><th>Grade</th><th>Description</th><th>Typical Use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>W180</td><td>Largest whole white kernels, ~180 per pound</td><td>Premium retail, gifting</td></tr>
+        <tr><td>W210</td><td>Whole white kernels, ~210 per pound</td><td>Premium retail</td></tr>
+        <tr><td>W240</td><td>Whole white kernels, ~240 per pound — most widely traded</td><td>Retail &amp; food service</td></tr>
+        <tr><td>W320</td><td>Whole white kernels, ~320 per pound — everyday grade</td><td>Snacking, bakery</td></tr>
+        <tr><td>W450</td><td>Smaller whole kernels, ~450 per pound</td><td>Value retail, bakery</td></tr>
+        <tr><td>SW</td><td>Scorched during processing, otherwise whole</td><td>Bakery, confectionery</td></tr>
+        <tr><td>LWP / SWP</td><td>Large / small white broken pieces</td><td>Bakery, snack mixes, processing</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="grades" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gallery</div>
+      <h2>See it before you buy it.</h2>
+      <p>Real photos build trust with buyers faster than any spec sheet. Add yours below.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="img-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+        <div class="slot-title">Sourcing / farm</div>
+        <div class="slot-sub">Raw cashew or farm sourcing photo</div>
+      </div>
+      <div class="img-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+        <div class="slot-title">Processing</div>
+        <div class="slot-sub">Shelling, grading, or packing in progress</div>
+      </div>
+      <div class="img-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-9 9"/></svg>
+        <div class="slot-title">Packed kernels</div>
+        <div class="slot-sub">Finished, packed product ready for export</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Process</div>
+      <h2>From farm gate to container.</h2>
+      <p>Every consignment moves through the same five stages, so quality stays consistent whether you're ordering one pallet or twenty containers.</p>
+    </div>
+    <div class="timeline">
+      <div class="step">
+        <div class="idx">01</div>
+        <div><h3>Sourcing</h3><p>Raw cashew nuts sourced from growers and regional suppliers, selected for moisture content and shell condition.</p></div>
+      </div>
+      <div class="step">
+        <div class="idx">02</div>
+        <div><h3>Processing</h3><p>Steaming, shelling, and drying at partner processing units under hygienic, monitored conditions.</p></div>
+      </div>
+      <div class="step">
+        <div class="idx">03</div>
+        <div><h3>Grading &amp; Sorting</h3><p>Kernels sorted by size and quality into standard trade grades — W180 through W450, plus piece grades.</p></div>
+      </div>
+      <div class="step">
+        <div class="idx">04</div>
+        <div><h3>Packing</h3><p>Vacuum-sealed or nitrogen-flushed packing in export cartons, labelled by grade, batch, and weight.</p></div>
+      </div>
+      <div class="step">
+        <div class="idx">05</div>
+        <div><h3>Export</h3><p>Documentation, container loading, and shipment on FOB or CIF terms to your destination port.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why Buyers Work With Us</div>
+      <h2>Consistency you can put in a contract.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card"><h3>Consistent Grading</h3><p>Each batch checked against standard grade specifications before packing, so what's quoted is what ships.</p></div>
+      <div class="trust-card"><h3>Traceable Sourcing</h3><p>Batches traceable back to their processing source for quality follow-up.</p></div>
+      <div class="trust-card"><h3>Export-Ready Packing</h3><p>Vacuum and nitrogen-flush packing options suited to long-distance shipping.</p></div>
+      <div class="trust-card"><h3>Flexible Volumes</h3><p>From trial pallets to full container loads, quoted on request.</p></div>
+      <div class="trust-card"><h3>Trade Terms</h3><p>FOB and CIF terms available depending on destination and volume.</p></div>
+      <div class="trust-card"><h3>Direct Communication</h3><p>One point of contact from quote to delivery — no middlemen chasing updates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="section-head" style="margin-bottom:20px;">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Request a bulk quote.</h2>
+      </div>
+      <p>Tell us the grade and quantity you need and we'll get back with pricing and lead time.</p>
+      <div class="info-row"><span class="k">Company</span><span class="v">KRR Cashew Impex</span></div>
+      <div class="info-row"><span class="k">Address</span><span class="v">46, North Street, Keelkangyankuppam, Panruti (TK), Cuddalore (Dist), Tamil Nadu 607805</span></div>
+      <div class="info-row"><span class="k">Phone</span><span class="v"><a href="tel:+918220070867" style="text-decoration:none;">+91 82200 70867</a></span></div>
+      <div class="info-row"><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/918220070867" style="text-decoration:none;" target="_blank" rel="noopener">+91 82200 70867</a></span></div>
+      <div class="info-row"><span class="k">Hours</span><span class="v">Mon–Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 5:00 PM<br>Sunday: 10:00 AM – 6:00 PM</span></div>
+    </div>
+
+    <form onsubmit="event.preventDefault(); alert('This form is a static demo — connect it to email or a backend to receive real inquiries.');">
+      <div class="form-row">
+        <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
+        <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+        <div class="field"><label for="country">Country</label><input id="country" type="text"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="grade">Grade of interest</label>
+          <select id="grade">
+            <option>W180</option><option>W210</option><option>W240</option>
+            <option>W320</option><option>W450</option><option>SW</option>
+            <option>LWP / SWP</option><option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="qty">Quantity (MT)</label><input id="qty" type="text" placeholder="e.g. 5 MT"></div>
+      </div>
+      <div class="form-row">
+        <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your requirement, timeline, or destination port."></textarea></div>
+      </div>
+      <button class="submit-btn" type="submit">Send Inquiry</button>
+      <p class="form-note">This form is a static demo. Connect it to an email service or backend to start receiving real inquiries.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>© 2026 KRR Cashew Impex. All rights reserved.</div>
+    <div>Panruti, Cuddalore, Tamil Nadu · +91 82200 70867</div>
+  </div>
+</footer>
+
+</body>
+</html>
