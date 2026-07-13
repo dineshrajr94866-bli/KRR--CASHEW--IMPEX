@@ -459,30 +459,31 @@
       <div class="info-row"><span class="k">Hours</span><span class="v">Mon–Fri: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 5:00 PM<br>Sunday: 10:00 AM – 6:00 PM</span></div>
     </div>
 
-    <form onsubmit="event.preventDefault(); alert('This form is a static demo — connect it to email or a backend to receive real inquiries.');">
-      <div class="form-row">
-        <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
-        <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
-      </div>
-      <div class="form-row">
-        <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
-        <div class="field"><label for="country">Country</label><input id="country" type="text"></div>
-      </div>
-      <div class="form-row">
-        <div class="field"><label for="grade">Grade of interest</label>
-          <select id="grade">
-            <option>W180</option><option>W210</option><option>W240</option>
-            <option>W320</option><option>W450</option><option>SW</option>
-            <option>LWP / SWP</option><option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field"><label for="qty">Quantity (MT)</label><input id="qty" type="text" placeholder="e.g. 5 MT"></div>
-      </div>
-      <div class="form-row">
-        <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your requirement, timeline, or destination port."></textarea></div>
-      </div>
-      <button class="submit-btn" type="submit">Send Inquiry</button>
-    </form>
+   <form id="inquiryForm" onsubmit="return sendToWhatsApp(event);">
+  <div class="form-row">
+    <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
+    <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
+  </div>
+  <div class="form-row">
+    <div class="field"><label for="email">Email</label><input id="email" type="email"></div>
+    <div class="field"><label for="country">Country</label><input id="country" type="text"></div>
+  </div>
+  <div class="form-row">
+    <div class="field"><label for="grade">Grade of interest</label>
+      <select id="grade">
+        <option>W180</option><option>W210</option><option>W240</option>
+        <option>W320</option><option>W450</option><option>SW</option>
+        <option>LWP / SWP</option><option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="field"><label for="qty">Quantity (MT)</label><input id="qty" type="text" placeholder="e.g. 5 MT"></div>
+  </div>
+  <div class="form-row">
+    <div class="field full"><label for="message">Message</label><textarea id="message" placeholder="Tell us about your requirement, timeline, or destination port."></textarea></div>
+  </div>
+  <button class="submit-btn" type="submit">Send Inquiry via WhatsApp</button>
+  <p class="form-note">Clicking "Send Inquiry" opens WhatsApp with your details pre-filled, sent directly to our team.</p>
+</form>
   </div>
 </section>
 
@@ -492,6 +493,34 @@
     <div>46,north street,keelkangyankuppam Panruti, Cuddalore, Tamil Nadu · +91 82200 70867</div>
   </div>
 </footer>
+<script>
+  function sendToWhatsApp(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var company = document.getElementById('company').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var country = document.getElementById('country').value.trim();
+    var grade = document.getElementById('grade').value;
+    var qty = document.getElementById('qty').value.trim();
+    var message = document.getElementById('message').value.trim();
 
+    var lines = [
+      "New inquiry from the KRR Cashew Impex website:",
+      "",
+      "Name: " + (name || "-"),
+      "Company: " + (company || "-"),
+      "Email: " + (email || "-"),
+      "Country: " + (country || "-"),
+      "Grade of interest: " + (grade || "-"),
+      "Quantity (MT): " + (qty || "-"),
+      "Message: " + (message || "-")
+    ];
+
+    var text = encodeURIComponent(lines.join("\n"));
+    var url = "https://wa.me/918220070867?text=" + text;
+    window.open(url, "_blank");
+    return false;
+  }
+</script>
 </body>
 </html>
